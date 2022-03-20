@@ -23,3 +23,4 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/", require("./routes/home"));
+app.use("/register", require("./routes/register"));
