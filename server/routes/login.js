@@ -16,11 +16,13 @@ router.post("/", (req, res) => {
           };
           jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: "1h" }, (err, token) => {
             if (err) res.json({ message: err });
-            else
+            else {
+              res.cookie("token", token, { expires: new Date(Date.now() + 900000), httpOnly: true });
               res.json({
                 message: "success",
-                token: token,
+                //   token: token,
               });
+            }
           });
         } else res.json({ message: "Invalid password!" });
       });

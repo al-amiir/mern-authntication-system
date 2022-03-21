@@ -18,7 +18,11 @@ const Login = () => {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        document.cookie = `token=${res.token}`;
+        // const now = new Date();
+        // const time = now.getTime();
+        // const expireTime = time + 86400000;
+        // now.setTime(expireTime);
+        // document.cookie = `token=${res.token}; expires=${now.toUTCString()}`;
       });
   }
   return (
