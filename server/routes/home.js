@@ -1,12 +1,12 @@
 const router = require("express").Router();
+const verify = require("../controlers/verify");
 
-router.get("/", (req, res) => {
-  res.json({ name: "amir", age: 26 });
+router.get("/", verify, (req, res) => {
+  res.json({
+    isLoggedIn: true,
+    username: req.user.username,
+  });
   res.send("Here We Are =D");
-});
-router.post("/", (req, res) => {
-  console.log(req.body);
-  res.json({ name: "miro" });
 });
 
 module.exports = router;

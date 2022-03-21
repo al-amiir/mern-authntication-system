@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const User = require("./models/users");
+const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
 const app = express();
@@ -12,6 +13,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 const KEY = process.env.KEY;
 const PORT = process.env.PORT;
@@ -22,7 +24,7 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-app.use("/", require("./routes/home"));
+app.use("/home", require("./routes/home"));
 app.use("/register", require("./routes/register"));
 app.use("/login", require("./routes/login"));
 app.use("/logout", require("./routes/logout"));

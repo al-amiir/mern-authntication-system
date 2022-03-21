@@ -18,12 +18,13 @@ const Login = () => {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        // const now = new Date();
-        // const time = now.getTime();
-        // const expireTime = time + 86400000;
-        // now.setTime(expireTime);
-        // document.cookie = `token=${res.token}; expires=${now.toUTCString()}`;
       });
+  }
+  function handleHome(e) {
+    e.preventDefault();
+    fetch("/home")
+      .then((res) => res.json())
+      .then((res) => console.log(res));
   }
   return (
     <div>
@@ -36,6 +37,7 @@ const Login = () => {
         <input type="password" name="password" value={passwordValue} onChange={(e) => setPasswordValue(e.target.value)} />
         <button onClick={handleSubmit}>Login</button>
       </form>
+      <button onClick={handleHome}>HOME</button>
     </div>
   );
 };
