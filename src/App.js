@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Login from "./components/Login";
 
 const App = () => {
   useEffect(() => {
@@ -20,7 +21,11 @@ const App = () => {
       .then((res) => console.log(res));
   }, []);
 
-  return <div>App</div>;
+  return (
+    <div>
+      <Login />
+    </div>
+  );
 };
 
 export default App;
