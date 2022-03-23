@@ -1,0 +1,19 @@
+.about {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  font-size: 1.4rem;
+  font-size: 1.6rem;
+  color: aquamarine;
+}
+.about p {
+  margin-top: 10px;
+}
+.about div {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

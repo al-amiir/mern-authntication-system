@@ -31,8 +31,10 @@ const Navbar = ({ loggInCondition, setloggInCondition }) => {
           <Link to="/products">
             <img src="https://img.icons8.com/external-justicon-lineal-color-justicon/45/000000/external-treasure-pirates-justicon-lineal-color-justicon.png" /> Treasure
           </Link>
+          <Link to="/about">About</Link>
           <Link onClick={handleLogout} to="/">
             Logout
+            <img style={{ marginLeft: "5px" }} src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/24/e2cfa6/external-logout-arrow-line-royyan-wijaya-detailed-outline-royyan-wijaya.png" />
           </Link>
         </>
       ) : (
@@ -42,8 +44,11 @@ const Navbar = ({ loggInCondition, setloggInCondition }) => {
             <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/45/000000/external-treasure-map-in-the-wild-flaticons-lineal-color-flat-icons.png" />
             Treasure
           </button>
-          <Link to="/signup">signup</Link>
-          <Link to="/login"> login</Link>
+          <Link to="/about">About</Link>
+          <Link to="/signup">Signup</Link>
+          <Link to="/login">
+            Login <img src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/24/000000/external-logout-arrow-line-royyan-wijaya-detailed-outline-royyan-wijaya.png" />
+          </Link>
         </>
       )}
     </div>

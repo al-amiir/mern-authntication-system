@@ -72,3 +72,7 @@
   box-shadow: -3px -2px 7px #1d1d1d, 3px 3px 5px black;
   border-radius: 7px;
 }
+
+.login_form button:active {
+  box-shadow: inset 2px 3px 7px #000000;
+}

@@ -45,7 +45,7 @@ const SignUpPage = () => {
         <p>Sing Up</p>
         <label htmlFor="username">username</label>
         <input type="text" name="username" value={usernameValue} onChange={(e) => setUsernameValue(() => e.target.value)} />
-        <p style={{ color: "red" }}>{usernameError}</p>
+        <span>{usernameError}</span>
         <br />
         <label htmlFor="email">email</label>
         <input type="email" name="email" value={emailValue} onChange={(e) => setEmailValue(() => e.target.value)} />
@@ -54,6 +54,7 @@ const SignUpPage = () => {
         <label htmlFor="password">password</label>
         <input type="password" name="password" value={passwordValue} onChange={(e) => setPasswordValue(e.target.value)} />
         <span>{passwordError}</span>
+        <br />
         <button onClick={handleSubmit}>Sign Up</button>
       </form>
       <img src={signUpPhoto2} alt="signup photo" />

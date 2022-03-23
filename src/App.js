@@ -6,6 +6,7 @@ import SignUpPage from "./pages/SignUpPage";
 import { Routes, Route, Link } from "react-router-dom";
 import ProductsPage from "./pages/ProductsPage";
 import LogInPage from "./pages/LogInPage";
+import About from "./pages/About";
 
 const App = () => {
   const [loggInCondition, setloggInCondition] = useState(false);
@@ -21,7 +22,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LogInPage setloggInCondition={setloggInCondition} />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/products" exact element={<ProductsPage />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </div>
   );
