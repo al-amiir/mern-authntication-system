@@ -8,13 +8,14 @@ import ProductsPage from "./pages/ProductsPage";
 import LogInPage from "./pages/LogInPage";
 
 const App = () => {
+  const [loggInCondition, setloggInCondition] = useState(false);
   return (
     <div>
-      <Navbar />
+      <Navbar loggInCondition={loggInCondition} setloggInCondition={setloggInCondition} />
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<LogInPage />} />
+        <Route path="/login" element={<LogInPage setloggInCondition={setloggInCondition} />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/products" exact element={<ProductsPage />} />
       </Routes>

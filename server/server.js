@@ -18,7 +18,7 @@ const PORT = process.env.PORT;
 mongoose
   .connect(KEY)
   .then((res) => {
-    app.listen(PORT, () => console.log("listen on port 5000"));
+    app.listen(PORT, () => console.log("listen on port 6000"));
   })
   .catch((err) => console.log(err));
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const LogInPage = () => {
+const LogInPage = ({ setloggInCondition }) => {
   const navigate = useNavigate();
 
   const [emailValue, setEmailValue] = useState("");
@@ -20,7 +20,10 @@ const LogInPage = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        if (res.message === "success") navigate("/");
+        if (res.message === "success") {
+          setloggInCondition(true);
+          navigate("/");
+        }
       });
   }
 
