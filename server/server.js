@@ -1,17 +1,15 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
-const User = require("./models/users");
 const cookieParser = require("cookie-parser");
+const mongoose = require("mongoose");
+// const jwt = require("jsonwebtoken");
+// const bcrypt = require("bcrypt");
+// const User = require("./models/users");
 require("dotenv").config();
 
 const app = express();
 
-// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
-// parse application/json
 app.use(bodyParser.json());
 app.use(cookieParser());
 
@@ -24,7 +22,8 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-app.use("/home", require("./routes/home"));
-app.use("/register", require("./routes/register"));
+app.use("/signup", require("./routes/register"));
 app.use("/login", require("./routes/login"));
 app.use("/logout", require("./routes/logout"));
+app.use("/home", require("./routes/home"));
+app.use("/products", require("./routes/products"));

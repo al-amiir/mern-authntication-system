@@ -20,7 +20,6 @@ router.post("/", (req, res) => {
               res.cookie("token", token, { expires: new Date(Date.now() + 900000), httpOnly: true });
               res.json({
                 message: "success",
-                //   token: token,
               });
             }
           });

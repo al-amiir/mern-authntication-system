@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const LogInPage = () => {
+  const navigate = useNavigate();
+
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   function handleSubmit(e) {
@@ -17,15 +20,10 @@ const Login = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
+        if (res.message === "success") navigate("/");
       });
   }
-  function handleHome(e) {
-    e.preventDefault();
-    fetch("/home")
-      .then((res) => res.json())
-      .then((res) => console.log(res));
-  }
+
   return (
     <div>
       <p>Login</p>
@@ -33,13 +31,13 @@ const Login = () => {
         <label htmlFor="email">email</label>
         <input type="email" name="email" value={emailValue} onChange={(e) => setEmailValue(() => e.target.value)} />
         <br />
+
         <label htmlFor="password">password</label>
         <input type="password" name="password" value={passwordValue} onChange={(e) => setPasswordValue(e.target.value)} />
         <button onClick={handleSubmit}>Login</button>
       </form>
-      <button onClick={handleHome}>HOME</button>
     </div>
   );
 };
 
-export default Login;
+export default LogInPage;

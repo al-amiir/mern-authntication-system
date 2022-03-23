@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   function handleLogout() {
@@ -9,6 +10,9 @@ const Navbar = () => {
   return (
     <div>
       <button onClick={handleLogout}>Logout</button>
+      <Link to="/login"> login</Link>
+      <Link to="/signup">signup</Link>
+      <Link to="/products">products</Link>
     </div>
   );
 };
