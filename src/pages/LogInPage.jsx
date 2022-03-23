@@ -24,7 +24,6 @@ const LogInPage = ({ setloggInCondition }) => {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         res.emailError ? setEmailError(res.emailError) : setEmailError("");
         res.passwordError ? setPasswordError(res.passwordError) : setPasswordError("");
         if (res.successMessage === "success") {

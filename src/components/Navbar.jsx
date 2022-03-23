@@ -18,6 +18,7 @@ const Navbar = ({ loggInCondition, setloggInCondition }) => {
       .then((res) => res.json())
       .then((res) => {
         if (res.isLoggedIn) {
+          navigate("/products");
         } else {
           navigate("/login");
         }

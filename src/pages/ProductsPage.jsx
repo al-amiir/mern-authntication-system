@@ -24,7 +24,7 @@ const ProductsPage = () => {
   return (
     <div className="products" style={{ filter: `brightness(${block})` }}>
       <p>
-        Well done <span style={{ color: "aqua" }}>{username} </span> you find the <span style={{ color: "crimson" }}>protected treasure</span>.
+        Well Done <span style={{ color: "aqua" }}>{username} </span> You Find The <span style={{ color: "crimson" }}>Protected Treasure</span>.
       </p>
       <img src={treasurePhoto} alt="treasure photo" />
     </div>

@@ -6,7 +6,7 @@ router.get("/", verify, (req, res) => {
     isLoggedIn: true,
     username: req.user.username,
   });
-  res.send("Here We Are =D");
+  // res.send("Here We Are =D");
 });
 
 module.exports = router;

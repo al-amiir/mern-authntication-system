@@ -10,16 +10,24 @@ import About from "./pages/About";
 
 const App = () => {
   const [loggInCondition, setloggInCondition] = useState(false);
-  useEffect(() => {
-    console.log(loggInCondition);
-  }, [loggInCondition]);
 
+  useEffect(() => {
+    fetch("/products")
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.isLoggedIn) {
+          setloggInCondition(true);
+        } else {
+          setloggInCondition(false);
+        }
+      });
+  }, []);
   return (
     <div>
       <Navbar loggInCondition={loggInCondition} setloggInCondition={setloggInCondition} />
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home loggInCondition={loggInCondition} />} />
         <Route path="/login" element={<LogInPage setloggInCondition={setloggInCondition} />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/products" element={<ProductsPage />} />
