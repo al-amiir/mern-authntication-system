@@ -23,11 +23,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "server": " nodemon ./server/server.js",
+    "server": " node ./server/server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:6000",
+  "proxy": "http://localhost:2000",
   "eslintConfig": {
     "extends": [
       "react-app",

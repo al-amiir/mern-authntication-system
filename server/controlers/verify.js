@@ -4,12 +4,13 @@ function verify(req, res, next) {
   const token = req.cookies.token;
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET_KEY, (err, decoded) => {
-      if (err)
+      if (err) {
         res.json({
           isLoggedIn: false,
           message: "Failed To Authenticate ",
         });
-      else {
+        // res.redirect("/login");
+      } else {
         req.user = {};
         req.user.id = decoded.id;
         req.user.username = decoded.username;
@@ -21,6 +22,7 @@ function verify(req, res, next) {
       isLoggedIn: false,
       message: "Login First",
     });
+    // res.redirect("/login");
   }
 }
 

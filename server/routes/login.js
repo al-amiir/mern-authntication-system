@@ -6,7 +6,7 @@ var jwt = require("jsonwebtoken");
 router.post("/", (req, res) => {
   const loginBody = req.body;
   userModel.findOne({ email: loginBody.email }).then((dbuser) => {
-    if (!dbuser) res.json({ message: "Invalid email" });
+    if (!dbuser) res.json({ emailError: "Invalid email" });
     else {
       bcrypt.compare(loginBody.password, dbuser.password).then((isCorrect) => {
         if (isCorrect) {
@@ -19,11 +19,11 @@ router.post("/", (req, res) => {
             else {
               res.cookie("token", token, { expires: new Date(Date.now() + 900000), httpOnly: true });
               res.json({
-                message: "success",
+                successMessage: "success",
               });
             }
           });
-        } else res.json({ message: "Invalid password!" });
+        } else res.json({ passwordError: "Invalid password!" });
       });
     }
   });

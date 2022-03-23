@@ -9,6 +9,10 @@ import LogInPage from "./pages/LogInPage";
 
 const App = () => {
   const [loggInCondition, setloggInCondition] = useState(false);
+  useEffect(() => {
+    console.log(loggInCondition);
+  }, [loggInCondition]);
+
   return (
     <div>
       <Navbar loggInCondition={loggInCondition} setloggInCondition={setloggInCondition} />

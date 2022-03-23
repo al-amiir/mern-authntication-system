@@ -1,0 +1,13 @@
+.home img {
+  width: 100%;
+  object-fit: cover;
+}
+.home p {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  bottom: 10vh;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #ebc966;
+}

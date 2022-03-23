@@ -1,0 +1,16 @@
+.products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.products p {
+  padding: 10px;
+  font-size: 2rem;
+  color: #ff9800;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.products img {
+  filter: contrast(1.5);
+}

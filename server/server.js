@@ -18,12 +18,12 @@ const PORT = process.env.PORT;
 mongoose
   .connect(KEY)
   .then((res) => {
-    app.listen(PORT, () => console.log("listen on port 6000"));
+    app.use("/signup", require("./routes/register"));
+    app.use("/login", require("./routes/login"));
+    app.use("/logout", require("./routes/logout"));
+    app.use("/home", require("./routes/home"));
+    app.use("/products", require("./routes/products"));
+
+    app.listen(PORT, () => console.log(`listen on port ${PORT}`));
   })
   .catch((err) => console.log(err));
-
-app.use("/signup", require("./routes/register"));
-app.use("/login", require("./routes/login"));
-app.use("/logout", require("./routes/logout"));
-app.use("/home", require("./routes/home"));
-app.use("/products", require("./routes/products"));

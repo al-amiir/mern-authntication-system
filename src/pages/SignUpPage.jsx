@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import signUpPhoto1 from "../styles/photos/signup1.png";
+import signUpPhoto2 from "../styles/photos/signup2.png";
+
+import "../styles/signup.css";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
@@ -35,22 +39,24 @@ const SignUpPage = () => {
   }
 
   return (
-    <div>
-      <p>Sing Up</p>
+    <div className="signup">
+      <img src={signUpPhoto1} alt="signup photo" />
       <form>
+        <p>Sing Up</p>
         <label htmlFor="username">username</label>
         <input type="text" name="username" value={usernameValue} onChange={(e) => setUsernameValue(() => e.target.value)} />
         <p style={{ color: "red" }}>{usernameError}</p>
         <br />
         <label htmlFor="email">email</label>
         <input type="email" name="email" value={emailValue} onChange={(e) => setEmailValue(() => e.target.value)} />
-        <p style={{ color: "red" }}>{emailError}</p>
+        <span>{emailError}</span>
         <br />
         <label htmlFor="password">password</label>
         <input type="password" name="password" value={passwordValue} onChange={(e) => setPasswordValue(e.target.value)} />
-        <p style={{ color: "red" }}>{passwordError}</p>
+        <span>{passwordError}</span>
         <button onClick={handleSubmit}>Sign Up</button>
       </form>
+      <img src={signUpPhoto2} alt="signup photo" />
     </div>
   );
 };
