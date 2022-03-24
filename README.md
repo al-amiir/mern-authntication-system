@@ -1,7 +1,11 @@
-### `npm start`
+# mern-authentication-system
+a simple web app about user authentication, authorization, and protecting a specific page so that if you do not log in you can't navigate to it.
+using React, Node, Express, MongoDB, JWT and Bcrypt.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Watch Through Youtube: https://www.youtube.com/watch?v=WrJEdH7nghY
+```
+npm install
+npm run server
+npm run start 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
